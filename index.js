@@ -13,7 +13,9 @@ const responseHeaders = {
 
 function requestHandler(request, response) {
   var query = url.parse(request.url, true).query;
-
+  
+  response.setEncoding('utf8');
+  
   if ( ! query.url ) {
     response.writeHead(400, responseHeaders);
     response.end(JSON.stringify({'error': 'Missing the URL query parameter.'}));
