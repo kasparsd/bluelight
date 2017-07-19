@@ -19,4 +19,4 @@ Run [Lighthouse](https://github.com/GoogleChrome/lighthouse) as a web service.
 	$ git clone https://github.com/kasparsd/bluelight.git
 	$ cd bluelight
 	$ npm install
-	$ node bluelight/index.js
+	$ node index.js
