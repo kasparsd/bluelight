@@ -14,7 +14,7 @@ const responseHeaders = {
 function requestHandler(request, response) {
   var query = url.parse(request.url, true).query;
   
-  response.setEncoding('utf8');
+  response.charset = 'utf-8';
   
   if ( ! query.url ) {
     response.writeHead(400, responseHeaders);
