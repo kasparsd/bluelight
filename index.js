@@ -20,7 +20,7 @@ function requestHandler(request, response) {
     return;
   }
 
-  launchChromeAndRunLighthouse('https://kaspars.net', flags).then(results => {
+  launchChromeAndRunLighthouse(query.url, flags).then(results => {
     response.writeHead(200, responseHeaders);
     response.end(JSON.stringify(results));
   });
