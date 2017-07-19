@@ -23,6 +23,9 @@ function requestHandler(request, response) {
   launchChromeAndRunLighthouse(query.url, flags).then(results => {
     response.writeHead(200, responseHeaders);
     response.end(JSON.stringify(results));
+  }).catch(error => {
+    response.writeHead(400, responseHeaders);
+    response.end(JSON.stringify({'error': error.message}));
   });
 }
 
