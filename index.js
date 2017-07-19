@@ -8,14 +8,12 @@ const flags = {
 };
 
 const responseHeaders = {
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json; charset=utf-8'
 };
 
 function requestHandler(request, response) {
   var query = url.parse(request.url, true).query;
-  
-  response.charset = 'utf-8';
-  
+
   if ( ! query.url ) {
     response.writeHead(400, responseHeaders);
     response.end(JSON.stringify({'error': 'Missing the URL query parameter.'}));
